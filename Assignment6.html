@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment 6</title>
+<link href="styles.css" rel="stylesheet">
+<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <h2 class="logo">New York Pizza</h2>
+      </div>
+
+      <div class="jumbotron">
+        <h1>The Best Pizza in Town!</h1>
+        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p><a class="btn btn-lg btn-success" href="#" role="button">Order Today!</a></p>
+      </div>
+
+      <div class="row marketing">
+        <div class="col-lg-6">
+            <form action="http://www.vectacorp.com/vc/scripts/contactus.asp" method="post" target="_blank" name="myForm" onsubmit="return(validate());">
+                <h2>DELIVERY LOCATION</h2>
+				<hr>
+                <label class="form-label"><b>Name:</b><input type="text" id="name" class="form-control"></label><br>
+			     <label class="form-label"><b>Address Type:</b>
+			        <select name="addressType" id="addressType" class="form-control" onchange="otherSelect()">
+                        <option value="house" selected>House</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="business">Business</option>
+                        <option value="campus">Campus</option>
+                        <option value="hotel">Hotel</option>  
+                        <option value="dorm">Dorm</option> 
+                        <option value="other">Other</option>
+					</select>
+       					<input name="otherField" type="text" id="otherBox" style="visibility: hidden;" class="form-control" /> 
+                </label><br>
+			    <label for="deliveryAddress" class="form-label"><b>Street Address:</b> <input id="deliveryAddress" class="form-control"></label><br>
+                <label for="apptNumber" class="form-label"><b>Appartment (Suite/Room) Number:</b> <input id="apptNumber" class="form-control"></label><br>
+                <label for="city" class="form-label"><b>City:</b> <input id="city" class="form-control"></label><br>
+                <label for="state" class="form-label"><b>State:</b> <input id="state" class="form-control"></label><br>
+                <label for="zipCode" class="form-label"><b>ZIP Code:</b> <input id="zipCode" name="zipCode" class="form-control" onsubmit="return validate()"></label><br>
+                <label for="phoneNumber" class="form-label"><b>Phone Number:</b> <input id="phoneNumber" class="form-control"></label><br>
+                <label for="email" class="form-label"><b>Email:</b> <input type="email" id="email" class="form-control"></label><br>
+               
+                <hr>
+            </form>
+        </div>
+
+        <div class="col-lg-6">
+          <h2>BUILD YOUR ORDER</h2>
+          <hr>
+				<label><b>STEP 1: Dough Options</b><br>
+                    <input type="radio" value="Hand Tossed" id="handTossed"> Hand Tossed<br>
+                    <input type="radio" value="Thin Crust" id="thinCrust"> Thin Crust<br>
+                    <input type="radio" value="New York Style" id="newYorkStyle"> New York Style<br>
+                    <input type="radio" value="Hand Tossed" id="handTossed"> Hand Tossed<br>
+                </label><br><br>
+                
+                <label><b>STEP 2: Size Options</b>
+                <select id="sizeOptions" class="form-label">
+                        <option value="0-10" selected>0-10</option>
+                        <option value="0-10">11-100</option>
+                        <option value="0-10">101-1000</option>
+                        <option value="0-10">More than 1000</option>
+                    </select>
+                </label><br><br>
+
+                <label><b>STEP 3: Cheese Options</b>
+			        <select id="cheeseOptions" class="form-label">
+                        <option value="light">Light: no charge</option>
+                        <option value="normal" selected>Normal: no charge</option>
+                        <option value="extra">Extra: +$2.99</option>
+                        <option value="double">Double: +$3.99</option>
+                    </select>
+                </label><br><br>
+
+                <label><b>STEP 4: Sauce Options</b>
+			        <select id="sauceOptions" class="form-label">
+                        <option value="regular" selected>Regular Tomato: no charge</option>
+                        <option value="hearty">Hearty Tomato: +$.99</option>
+                        <option value="bbq">BBQ Sauce: +$1.99</option>
+                    </select>
+                </label><br><br>
+                
+                 <label><b>STEP 5: Toppings Options (Each topping is $.99 extra)</b><br>
+                    <input type="checkbox" name="peperoni" value="peperoni" id="peperoni"> Pepperoni 
+                    <input type="checkbox" name="sausage" value="sausage" id="sausage"> Sausage
+                    <input type="checkbox" name="ham" value="ham" id="ham"> Ham<br>
+                    <input type="checkbox" name="bacon" value="bacon" id="bacon"> Bacon </label>
+                    <input type="checkbox" name="salami" value="salami" id="salami"> Salami  
+                    <input type="checkbox" name="peppers" value="peppers" id="peppers"> Peppers<br>
+                    <input type="checkbox" name="olives" value="olives" id="olives"> Olives
+                    <input type="checkbox" name="jalapenos" value="jalapenos" id="jalapenos"> Jalapenos  
+                    <input type="checkbox" name="mushrooms" value="mushrooms" id="mushrooms"> Mushrooms<br>  
+                    <input type="checkbox" name="pineapple" value="pineapple" id="pineapple"> Pineapple 
+                    <input type="checkbox" name="onion" value="onion" id="onion"> Onion<br>                     
+                    </select>
+                </label>
+                <hr>
+        </div>
+        
+         <div class="col-lg-12">
+              	<h2>BILLING ADDRESS</h2>
+              	<hr>
+            	<label for="billing"><input type="checkbox" name="billing" value="billing" id="billing"> *Please check if billing address is same as delivery address. </label>
+				<hr>
+                <label class="form-label"><b>Name:</b><input type="text" id="name" class="form-control"></label><br>
+			     <label class="form-label"><b>Address Type:</b>
+			        <select name="addressType" id="addressType" class="form-control" onchange="otherSelect()">
+                        <option value="house" selected>House</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="business">Business</option>
+                        <option value="campus">Campus</option>
+                        <option value="hotel">Hotel</option>  
+                        <option value="dorm">Dorm</option> 
+                        <option value="other">Other</option>
+					</select>
+       					<input name="otherField" type="text" id="otherBox" style="visibility: hidden;" class="form-control" /> 
+                </label><br>
+			    <label for="deliveryAddress" class="form-label"><b>Street Address:</b> <input id="deliveryAddress" class="form-control"></label><br>
+                <label for="apptNumber" class="form-label"><b>Appartment (Suite/Room) Number:</b> <input id="apptNumber" class="form-control"></label><br>
+                <label for="city" class="form-label"><b>City:</b> <input id="city" class="form-control"></label><br>
+                <label for="state" class="form-label"><b>State:</b> <input id="state" class="form-control"></label><br>
+                <label for="zipCode" class="form-label"><b>ZIP Code:</b> <input id="zipCode" class="form-control" onsubmit="return validate()"></label><br>
+                <label for="phoneNumber" class="form-label"><b>Phone Number:</b> <input id="phoneNumber" class="form-control"></label><br>
+                <label for="email" class="form-label"><b>Email:</b> <input type="email" id="email" class="form-control"></label><br>
+                <hr>
+				<label for="creditCardNumber" class="form-label"><b>Credit Card Number:</b> <input name="creditCardNumber" id="creditCardNumber" class="form-control" onsubmit="return validate()"></label><br>
+                <label for="cvcCode"><b>CVC Code:</b> <input name="cvcCode" id="cvcCode" class="form-control"></label><br>
+			    <b>Expiration:</b><br>
+                <select name="expMonth" id="expMonth">
+                        <option value="01" selected>01 - January</option>
+                        <option value="02">02 - February</option>
+                        <option value="03">03 - March</option>
+                        <option value="04">04 - April</option>
+                        <option value="05">05 - May</option>  
+                        <option value="06">06 - June</option> 
+                        <option value="07">07 - July</option>
+                        <option value="08">08 - August</option>
+                        <option value="09">09 - September</option>
+                        <option value="10">10 - October</option>
+                        <option value="11">11 - November</option>
+                        <option value="12">12 - December</option>
+                 </select>
+				<select name="expYear" id="expYear">
+                        <option value="2015" selected>2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>  
+                        <option value="2020">2020</option> 
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                 </select>  
+                <hr>
+            <input type="submit" name="submit" value="Finished Building Pizza" class="btn btn-lg btn-success">
+			</form>
+         </div>
+      </div>
+
+      <footer class="footer">
+        <p>© New York Pizza 2015</p>
+      </footer>
+
+    </div>
+
+</body>
+</html>
